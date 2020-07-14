@@ -1,0 +1,7 @@
+version: "2"
+
+syncs:
+    wp:
+        notify_terminal: true
+        src: "wp/"
+        sync_excludes: [".git", ".idea", "node_modules"]

@@ -1,0 +1,20 @@
+version: "3.3"
+services:
+    wp:
+        depends_on:
+          - db
+        volumes:
+          - wp:/var/www/html:nocopy
+        image: wordpress:latest
+        ports:
+          - "80:80"
+        restart: always
+        environment:
+            WORDPRESS_DB_HOST: db:3306
+            WORDPRESS_DB_USER: root
+            WORDPRESS_DB_PASSWORD: root
+            WORDPRESS_DB_NAME: wordpress_db
+
+volumes:
+    wp:
+        external: true
